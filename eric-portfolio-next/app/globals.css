@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(79, 216, 203, 0.06), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 10%, rgba(242, 184, 75, 0.04), transparent 60%),
+    #0a0e13;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(79, 216, 203, 0.15);
+  color: #4fd8cb;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #4fd8cb;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* scroll-reveal utility, toggled by the useReveal hook */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
